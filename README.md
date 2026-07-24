@@ -33,7 +33,7 @@ bo-ai-agent-van-phong-30-ngay/
 ├── giao-an/                        <- KỊCH BẢN GIẢNG (thứ giảng viên cần nhất)
 │   ├── tuan-1-project/                 Buổi 1-5  . Mức 1 - Trợ lý Project
 │   ├── tuan-2-skill/                   Buổi 6-10 . Mức 2 - Artifact + Skill
-│   ├── tuan-3-subagent/                Buổi 11-15 . Mức 3a - Xây từng subagent
+│   ├── tuan-3-subagent/                Buổi 11-15 . B11 chốt Skill, B12-15 subagent
 │   └── tuan-4-agent-team/              Buổi 16-20 . Mức 3b - Ghép đội + Workspace
 │
 ├── tai-nguyen-hoc-vien/            <- FILE PHÁT CHO HỌC VIÊN tải về (agent/prompt/skill sẵn)
@@ -54,8 +54,8 @@ bo-ai-agent-van-phong-30-ngay/
 | Mức | Là gì | Tuần | Cài đặt |
 |---|---|---|---|
 | **Mức 1** | Trợ lý Project (claude.ai) | Tuần 1 (Buổi 1-5) | Không cài gì |
-| **Mức 2** | Artifact + Skill (đóng gói cách làm) | Tuần 2 (Buổi 6-10) | Buổi 6-7 không cài; **Claude Code từ buổi 8** |
-| **Mức 3** | Đội trợ lý - Agent team / Workspace | Tuần 3-4 (Buổi 11-20) | Claude Code |
+| **Mức 2** | Artifact + Skill (đóng gói cách làm) | Tuần 2 + B11 (Buổi 6-11) | Buổi 6-7 không cài; **Claude Code từ buổi 8** |
+| **Mức 3** | Đội trợ lý - Agent team / Workspace | Tuần 3-4 (Buổi 12-20) | Claude Code |
 
 Cùng một tư duy "giao việc có cấu trúc" (đầu vào - đầu ra - cách kiểm tra), chỉ khác công cụ. Chi tiết: [00-tong-quan/3-muc-agent-project-skill-subagent.md](00-tong-quan/3-muc-agent-project-skill-subagent.md).
 
@@ -65,6 +65,7 @@ Cùng một tư duy "giao việc có cấu trúc" (đầu vào - đầu ra - cá
 
 - [x] Tuần 1 (Buổi 01-05) - Mức 1 Project: viết thư, tóm tắt tài liệu, ghi chú họp, lập kế hoạch, viết báo cáo. Làm chủ 4 tính năng Project (Instructions, Context, Memory, Scheduled).
 - [x] Tuần 2 (Buổi 06-10) - Mức 2: Artifact (B06) và Skill - đóng gói tài liệu (B07), tóm tắt tài liệu (B08-09), tạo slide (B10). Biết **ba cách để có một skill**: nhờ Claude đóng gói / tự sinh từ các lượt hỏi / cài skill viết sẵn.
-- [ ] Buổi 11-20 - đang soạn theo khuôn.
+- [x] Buổi 11 - Chốt Mức 2: skill làm sạch dữ liệu. Buổi duy nhất đảo khung (học viên tự làm trước, giảng viên chữa sau) và có bài chấm điểm.
+- [ ] Buổi 12-20 - đang soạn theo khuôn.
 
 *© CES Global - Bộ tài liệu chương trình "30 Ngày Làm Chủ AI Agent".*

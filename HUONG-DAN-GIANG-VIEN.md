@@ -24,7 +24,9 @@ Tài liệu này giúp mọi giảng viên dạy khóa một cách nhất quán:
 | 35 - 41 | Tinh chỉnh + kiểm tra + lỗi thường gặp |
 | 41 - 45 | Lưu agent + giao bài về nhà |
 
-**Buổi "đổi mức/công cụ" dành thêm thời gian cho phần công cụ mới, rút gọn phần thực hành:** Buổi 1 (vào Project), Buổi 8 (vào Claude Code), Buổi 11 (vào subagent), Buổi 17 (ghép đội).
+**Buổi "đổi mức/công cụ" dành thêm thời gian cho phần công cụ mới, rút gọn phần thực hành:** Buổi 1 (vào Project), Buổi 8 (vào Claude Code), Buổi 12 (vào subagent), Buổi 17 (ghép đội).
+
+**Buổi 11 đảo ngược khung này:** học viên tự làm bài 20 phút trước, giảng viên chữa sau. Là buổi duy nhất có bài chấm điểm.
 
 ---
 
@@ -33,8 +35,8 @@ Tài liệu này giúp mọi giảng viên dạy khóa một cách nhất quán:
 | Mức | Công cụ | Tuần / Buổi | Ghi chú |
 |---|---|---|---|
 | **Mức 1** | Trợ lý **Project** (claude.ai) | Tuần 1 . B1-5 | Không cài đặt. Tuần 1 học đủ 4 tính năng: Instructions, Context, Memory, Scheduled. |
-| **Mức 2** | **Artifact** rồi **Skill** | Tuần 2 . B6-10 | B6 (Artifact) và B7 (Skill) vẫn trên claude.ai, **không cài gì**. Claude Code chỉ cần **từ B8** - giao bài cài ở cuối B7. |
-| **Mức 3** | Đội trợ lý - **Agent team** | Tuần 3-4 . B11-20 | Tuần 3 xây từng subagent (mỗi con 1 vai); Tuần 4 ghép thành đội phối hợp + Workspace. |
+| **Mức 2** | **Artifact** rồi **Skill** | Tuần 2 + B11 . B6-11 | B6 (Artifact) và B7 (Skill) vẫn trên claude.ai, **không cài gì**. Claude Code chỉ cần **từ B8** - giao bài cài ở cuối B7. Chốt ở B11 bằng bài chấm điểm. |
+| **Mức 3** | Đội trợ lý - **Agent team** | Tuần 3-4 . B12-20 | Từ B12 xây từng subagent (mỗi con 1 vai); Tuần 4 ghép thành đội phối hợp + Workspace. |
 
 Bản đồ đầy đủ: `00-tong-quan/lo-trinh-20-buoi.html`. Bảng so sánh 3 mức: `00-tong-quan/3-muc-agent-project-skill-subagent.md`.
 
