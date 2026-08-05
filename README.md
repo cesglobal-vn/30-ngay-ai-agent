@@ -49,6 +49,16 @@ bo-ai-agent-van-phong-30-ngay/
 
 ---
 
+## Bộ công cụ phát cuối khóa
+
+Bộ AI Agent Văn Phòng cho Claude Code (33 skill + 17 trợ lý) nằm ở repo riêng, dùng chung cho nhiều khóa:
+
+**https://github.com/cesglobal-vn/ces-ai-agent-van-phong**
+
+Khóa này phát bản **`v1.0.0`**. Nhắc học viên tải đúng thẻ phiên bản đó, đừng lấy bản `main` mới nhất - các khóa sau bộ này sẽ còn bổ sung, lấy nhầm là lệch với tài liệu đã học.
+
+---
+
 ## 3 mức nâng cấp dần (xuyên suốt khóa)
 
 | Mức | Là gì | Tuần | Cài đặt |
