@@ -262,15 +262,22 @@ Bạn đã có ba người, nhưng chưa có dây chuyền. Ba người đứng 
 phải tự đứng ra hô: gọi con này trước, xong đưa kết quả cho con kia. Dặn miệng ba vế mỗi
 lần, quên một vế là hỏng.
 
-Câu hỏi đúng lúc này là: **ai làm trưởng phòng?** Và đây là chỗ hầu hết mọi người đoán sai.
+Câu hỏi đúng lúc này là: **ai làm trưởng phòng?**
 
-Nghe hợp lý nhất là lập thêm một con agent "trưởng phòng", để nó đứng ra gọi ba con kia.
-**Không làm được.** Trong Claude Code, một trợ lý phụ không thuê được trợ lý phụ khác. Con
-trưởng phòng bạn lập ra sẽ ngồi trong phòng riêng của nó và không gọi được ai cả.
+Nghe hợp lý nhất là lập thêm một con agent "trưởng phòng" để nó đứng ra gọi ba con kia. Làm
+được, trợ lý phụ gọi được trợ lý phụ khác. Nhưng với việc của anh chị thì **để chính bạn làm
+trưởng phòng vẫn hơn**, vì ba lẽ:
 
-Vậy trưởng phòng là ai? **Chính là phiên chính của bạn** - cái cửa sổ Claude bạn đang gõ
-vào. Chỉ nó mới có quyền gọi trợ lý phụ. Nên thứ tự dây chuyền phải viết vào chỗ mà phiên
-chính luôn đọc, và bạn biết chỗ đó rồi: `CLAUDE.md`, đúng cái tờ giới thiệu dựng ở buổi 12.
+- **Bạn nhìn thấy từng khâu.** Con nào vừa chạy, trả về cái gì, hiện ngay trên màn hình. Giao
+  cho một con trưởng phòng thì cả dây chuyền chạy kín trong phòng nó, xong mới đưa bạn một
+  bản tóm tắt. Hỏng ở khâu nào rất khó lần ra.
+- **Trợ lý phụ không quay ra hỏi bạn được.** Nó chạy một mạch tới xong. Khâu nào cần bạn
+  quyết giữa chừng thì phải nằm ở phiên chính.
+- **Càng lồng nhiều tầng càng tốn.** Mỗi tầng là một Claude nữa đọc lại đầu bài.
+
+Nên trưởng phòng là **phiên chính của bạn**, cái cửa sổ Claude bạn đang gõ vào. Thứ tự dây
+chuyền vì thế viết vào chỗ mà phiên chính luôn đọc, và bạn biết chỗ đó rồi: `CLAUDE.md`,
+đúng cái tờ giới thiệu dựng ở buổi 12.
 
 Nhớ lại buổi 12, `CLAUDE.md` trả lời câu "bạn là ai". Hôm nay ta thêm vào đó một câu nữa:
 **"việc này thì đi qua những khâu nào"**. Vẫn là thứ luôn đúng cho mọi lần, nên để ở đó là
@@ -456,7 +463,7 @@ Hiểu để dùng sau:
 - [ ] Biết dòng "được đụng vào" là dòng hay quên nhất, và quên nó thì mất luôn cái khóa
 - [ ] Biết file agent thiếu dòng `tools:` nghĩa là cho tất chứ không phải không cho gì
 - [ ] Biết vì sao người gác cổng phải bị khóa chỉ đọc
-- [ ] Biết không lập được agent trưởng phòng, và trưởng phòng chính là phiên chính của bạn
+- [ ] Biết vì sao nên để phiên chính làm trưởng phòng, dù lập agent điều phối cũng được
 - [ ] Biết dây chuyền chậm hơn và tốn hơn nhờ một câu, đổi lấy chất lượng ổn định
 - [ ] Biết gặp lỗi nào thì mở file nào để sửa, thay vì dặn lại trong khung chat
 

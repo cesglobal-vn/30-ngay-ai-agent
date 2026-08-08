@@ -381,13 +381,17 @@ tức là khóa mất chính việc của con này. Muốn an toàn hơn thì b�
 Ba người đứng rời nhau thì lần nào bạn cũng phải tự hô: gọi con này trước, xong đưa kết quả
 cho con kia. Quên một vế là hỏng.
 
-Vậy **ai làm trưởng phòng?** Đây là chỗ hầu hết đoán sai. Nghe hợp lý nhất là lập thêm một
-agent "trưởng phòng" để nó gọi ba con kia. **Không làm được.** Trong Claude Code, một trợ lý
-phụ không thuê được trợ lý phụ khác.
+Vậy **ai làm trưởng phòng?** Nghe hợp lý nhất là lập thêm một agent "trưởng phòng" để nó gọi
+ba con kia. Làm được, trợ lý phụ gọi được trợ lý phụ khác. Nhưng với việc của anh chị thì
+**để chính bạn làm trưởng phòng vẫn hơn**, vì ba lẽ:
 
-Trưởng phòng **chính là phiên chính của bạn**, cái cửa sổ Claude bạn đang gõ vào. Chỉ nó mới
-gọi được trợ lý phụ. Đây cũng là lý do khâu phỏng vấn ở Bước 2 phải làm ở đây: trợ lý phụ
-chạy một mạch trong phòng riêng, giữa chừng không quay ra hỏi bạn được.
+- **Bạn nhìn thấy từng khâu**, thay vì cả dây chuyền chạy kín trong phòng một con rồi mới đưa
+  bạn bản tóm tắt. Hỏng ở khâu nào còn lần ra được.
+- **Trợ lý phụ không quay ra hỏi bạn được**, nó chạy một mạch tới xong. Đây chính là lý do
+  khâu phỏng vấn ở Bước 2 phải nằm ở phiên chính.
+- **Càng lồng nhiều tầng càng tốn**, mỗi tầng là một Claude nữa đọc lại đầu bài.
+
+Trưởng phòng vì thế là **phiên chính của bạn**, cái cửa sổ Claude bạn đang gõ vào.
 
 Nên thứ tự dây chuyền phải viết vào chỗ phiên chính luôn đọc: `CLAUDE.md`, đúng cái tờ giới
 thiệu dựng ở buổi 12. Buổi đó nó trả lời câu "bạn là ai". Hôm nay thêm câu nữa: **"việc này
@@ -590,7 +594,7 @@ Hiểu để dùng sau:
 - [ ] Thuộc công thức năm dòng: tên, khi nào gọi, được đụng vào, làm gì, trả về
 - [ ] Biết dòng "được đụng vào" hay quên nhất, và quên thì mất luôn cái khóa
 - [ ] Biết file agent thiếu dòng `tools:` nghĩa là cho tất chứ không phải không cho gì
-- [ ] Biết không lập được agent trưởng phòng, trưởng phòng chính là phiên chính của bạn
+- [ ] Biết vì sao nên để phiên chính làm trưởng phòng, dù lập agent điều phối cũng được
 - [ ] Biết việc cần đối đáp với bạn thì không giao cho trợ lý phụ được
 - [ ] Biết dây chuyền chậm hơn và tốn hơn, đổi lấy bản có người soi hộ
 - [ ] Biết gặp lỗi nào thì mở file nào để sửa, thay vì dặn lại trong khung chat
