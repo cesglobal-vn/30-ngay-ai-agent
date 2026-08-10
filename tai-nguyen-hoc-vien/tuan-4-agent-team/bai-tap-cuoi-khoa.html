@@ -1,0 +1,371 @@
+<!doctype html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bài tập cuối khóa - 30 Ngày Làm Chủ AI Agent</title>
+<style>
+  :root{
+    --navy:#12305f; --red:#c62828; --teal:#0f7b7b; --gold:#b98900;
+    --ink:#1c2430; --muted:#5b6675; --line:#dfe4ea; --bg:#ffffff; --soft:#f5f7fa;
+  }
+  *{box-sizing:border-box}
+  body{
+    margin:0; background:var(--bg); color:var(--ink);
+    font:16px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Arial,sans-serif;
+  }
+  .wrap{max-width:880px;margin:0 auto;padding:32px 24px 64px}
+  header{border-bottom:3px solid var(--navy);padding-bottom:18px;margin-bottom:8px}
+  .brand{color:var(--teal);font-weight:700;letter-spacing:.14em;font-size:12px;text-transform:uppercase}
+  h1{margin:6px 0 4px;font-size:27px;color:var(--navy);line-height:1.25}
+  .sub{color:var(--muted);font-size:15px}
+  .flag{
+    margin:18px 0 28px;background:#fff4f4;border:1px solid #f0c9c9;border-left:5px solid var(--red);
+    padding:12px 16px;border-radius:6px;font-size:14px
+  }
+  .flag b{color:var(--red)}
+  .meta{
+    display:flex;flex-wrap:wrap;gap:10px;margin:22px 0 30px
+  }
+  .meta div{
+    flex:1 1 190px;background:var(--soft);border:1px solid var(--line);
+    border-radius:8px;padding:11px 14px
+  }
+  .meta span{display:block;font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .meta strong{font-size:15px;color:var(--navy)}
+  h2{
+    margin:40px 0 6px;font-size:21px;color:var(--navy);
+    border-bottom:2px solid var(--line);padding-bottom:8px
+  }
+  h2 .n{
+    display:inline-block;background:var(--navy);color:#fff;width:28px;height:28px;
+    border-radius:6px;text-align:center;line-height:28px;font-size:15px;margin-right:9px
+  }
+  .lead{color:var(--muted);margin:8px 0 22px;font-size:15px}
+  .q{margin:0 0 22px;padding:16px 18px;border:1px solid var(--line);border-radius:9px;page-break-inside:avoid}
+  .q > p{margin:0 0 11px;font-weight:600}
+  .q > p b{color:var(--teal);margin-right:6px}
+  ul.opt{list-style:none;margin:0;padding:0}
+  ul.opt li{padding:5px 0 5px 30px;position:relative;font-size:15px}
+  ul.opt li::before{
+    content:attr(data-k);position:absolute;left:0;top:5px;width:21px;height:21px;
+    border:1px solid var(--line);border-radius:50%;text-align:center;line-height:20px;
+    font-size:12px;color:var(--muted);background:#fff
+  }
+  li.ok{font-weight:600}
+  li.ok::before{background:var(--teal);border-color:var(--teal);color:#fff}
+  .tag{
+    display:inline-block;margin-left:8px;background:#e7f4f4;color:var(--teal);
+    border:1px solid #bfe0e0;border-radius:4px;padding:1px 7px;font-size:11px;font-weight:700;vertical-align:1px
+  }
+  .route{border:1px solid var(--line);border-radius:9px;padding:18px 20px;margin:0 0 18px}
+  .route h3{margin:0 0 4px;font-size:17px;color:var(--navy)}
+  .route .who{color:var(--muted);font-size:14px;margin:0 0 12px}
+  .route ol{margin:0;padding-left:20px}
+  .route ol li{margin-bottom:9px}
+  .box{background:var(--soft);border:1px solid var(--line);border-radius:8px;padding:14px 18px;margin:18px 0}
+  .box h3{margin:0 0 8px;font-size:16px;color:var(--navy)}
+  .box ol,.box ul{margin:0;padding-left:20px}
+  .box li{margin-bottom:6px}
+  code{
+    background:#eef1f5;border:1px solid var(--line);border-radius:4px;
+    padding:1px 5px;font:13px/1.5 ui-monospace,Menlo,Consolas,monospace
+  }
+  .note{font-size:14px;color:var(--muted);margin-top:8px}
+  footer{margin-top:46px;padding-top:16px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+  @media print{
+    .flag{border-left-color:#999}
+    .q{border-color:#ccc}
+    body{font-size:12pt}
+  }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="brand">CES Global - 30 Ngày Làm Chủ AI Agent</div>
+  <h1>Bài tập cuối khóa</h1>
+  <div class="sub">20 câu lý thuyết + 1 bài thực hành nhẹ</div>
+</header>
+
+<div class="flag">
+  <b>BẢN GIẢNG VIÊN - CÓ ĐÁP ÁN.</b> Đáp án đúng được tô đậm và đánh dấu. Đừng gửi file này
+  cho học viên. Bản phát cho học viên là bản không có đáp án.
+</div>
+
+<div class="meta">
+  <div><span>Giao bài</span><strong>Thứ Bảy</strong></div>
+  <div><span>Nộp trước</span><strong>Sáng Thứ Hai</strong></div>
+  <div><span>Thời gian làm</span><strong>Khoảng 45 phút</strong></div>
+  <div><span>Nộp ở đâu</span><strong>Nhóm Zalo lớp</strong></div>
+</div>
+
+<h2><span class="n">1</span>Trắc nghiệm - 20 câu</h2>
+<p class="lead">
+  Mỗi câu chọn một đáp án. Không cần tra tài liệu, cứ chọn theo cái anh chị nhớ và hiểu.
+  Câu nào phân vân thì cứ chọn, buổi sau ta chữa chung.
+</p>
+
+<div class="q">
+  <p><b>1.</b> Trợ lý Project khác một cuộc chat thường ở chỗ nào?</p>
+  <ul class="opt">
+    <li data-k="A" class="ok">Project giữ sẵn bối cảnh và tài liệu đã nạp, không phải kể lại từ đầu mỗi lần <span class="tag">Đáp án</span></li>
+    <li data-k="B">Project trả lời nhanh hơn</li>
+    <li data-k="C">Project dùng model thông minh hơn</li>
+    <li data-k="D">Project chạy được khi không có mạng</li>
+  </ul>
+</div>
+
+<div class="q">
+  <p><b>2.</b> Anh chị muốn Claude luôn viết đúng giọng công ty mà không phải nhắc lại mỗi lần. Đặt ở đâu?</p>
+  <ul class="opt">
+    <li data-k="A">Gõ lại ở đầu mỗi cuộc trò chuyện</li>
+    <li data-k="B" class="ok">Phần hướng dẫn (Instructions) của Project <span class="tag">Đáp án</span></li>
+    <li data-k="C">Đặt tên Project cho thật rõ</li>
+    <li data-k="D">Ghi vào nhóm Zalo để nhớ</li>
+  </ul>
+</div>
+
+<div class="q">
+  <p><b>3.</b> Đặt lịch cho trợ lý tự chạy có ý nghĩa lớn nhất là gì?</p>
+  <ul class="opt">
+    <li data-k="A">Câu trả lời chính xác hơn</li>
+    <li data-k="B">Đỡ tốn tiền hơn</li>
+    <li data-k="C" class="ok">Việc lặp lại theo lịch không cần anh chị nhớ và ngồi mở máy <span class="tag">Đáp án</span></li>
+    <li data-k="D">Không cần viết hướng dẫn nữa</li>
+  </ul>
+</div>
+
+<div class="q">
+  <p><b>4.</b> Nói gọn thì skill là gì?</p>
+  <ul class="opt">
+    <li data-k="A">Một phần mềm phải mua thêm</li>
+    <li data-k="B">Một loại tài khoản trả phí</li>
+    <li data-k="C">Một cách gõ câu hỏi cho nhanh</li>
+    <li data-k="D" class="ok">Một quyển công thức ghi sẵn cách làm một việc, lần sau khỏi dặn lại từ đầu <span class="tag">Đáp án</span></li>
+  </ul>
+</div>
+
+<div class="q">
+  <p><b>5.</b> Cái gì quyết định Claude có tự nhớ ra mà dùng skill hay không?</p>
+  <ul class="opt">
+    <li data-k="A">Tên file đặt hay hay dở</li>
+    <li data-k="B">Skill viết dài hay ngắn</li>
+    <li data-k="C" class="ok">Dòng mô tả nói rõ skill này dùng khi nào <span class="tag">Đáp án</span></li>
+    <li data-k="D">Ngày tạo file</li>
+  </ul>
+</div>
+
+<div class="q">
+  <p><b>6.</b> Việc nào đáng đóng gói thành skill?</p>
+  <ul class="opt">
+    <li data-k="A">Việc chỉ làm đúng một lần rồi thôi</li>
+    <li data-k="B" class="ok">Việc lặp lại nhiều lần, cách làm gần như cố định <span class="tag">Đáp án</span></li>
+    <li data-k="C">Việc mỗi lần làm một kiểu khác nhau</li>
+    <li data-k="D">Việc không ai kiểm tra kết quả</li>
+  </ul>
+</div>
+
+<div class="q">
+  <p><b>7.</b> Artifact học ở buổi 6 là gì?</p>
+  <ul class="opt">
+    <li data-k="A" class="ok">Một ứng dụng nhỏ Claude dựng ra ngay trong khung chat, mở là dùng được, không phải cài gì <span class="tag">Đáp án</span></li>
+    <li data-k="B">Một file Word Claude gửi kèm cho mình tải về</li>
+    <li data-k="C">Một loại tài khoản trả phí</li>
+    <li data-k="D">Một thư mục để lưu kết quả</li>
+  </ul>
+</div>
+
+<div class="q">
+  <p><b>8.</b> Cả phòng cùng dùng chung một skill cho một việc thì lợi ích lớn nhất là gì?</p>
+  <ul class="opt">
+    <li data-k="A">Đỡ tốn tiền hơn</li>
+    <li data-k="B">Chạy nhanh hơn</li>
+    <li data-k="C">Không cần ai kiểm tra kết quả nữa</li>
+    <li data-k="D" class="ok">Ai làm cũng ra cùng một chuẩn, nên kết quả ghép lại mới khớp nhau <span class="tag">Đáp án</span></li>
+  </ul>
+</div>
+
+<div class="q">
+  <p><b>9.</b> File <code>CLAUDE.md</code> dùng để làm gì?</p>
+  <ul class="opt">
+    <li data-k="A" class="ok">Tờ giới thiệu Claude đọc trước mỗi phiên, để biết anh chị là ai và làm gì <span class="tag">Đáp án</span></li>
+    <li data-k="B">Lưu kết quả công việc đã làm</li>
+    <li data-k="C">Lưu mật khẩu và tài khoản</li>
+    <li data-k="D">Nhật ký các câu đã hỏi</li>
+  </ul>
+</div>
+
+<div class="q">
+  <p><b>10.</b> Nội dung nào KHÔNG nên đưa vào <code>CLAUDE.md</code>?</p>
+  <ul class="opt">
+    <li data-k="A">Anh chị bán gì, cho khách nào</li>
+    <li data-k="B">Giọng văn, cách xưng hô, từ cấm dùng</li>
+    <li data-k="C" class="ok">Quy trình chi tiết từng bước cho một việc cụ thể, thứ đó để dành cho skill <span class="tag">Đáp án</span></li>
+    <li data-k="D">Sơ đồ các thư mục và chỗ nào chứa gì</li>
+  </ul>
+</div>
+
+<div class="q">
+  <p><b>11.</b> Vì sao nên ghi sơ đồ thư mục thẳng vào <code>CLAUDE.md</code>, thay vì tạo một file mục lục riêng?</p>
+  <ul class="opt">
+    <li data-k="A" class="ok">Vì Claude luôn đọc <code>CLAUDE.md</code> ở đầu mỗi phiên, còn file riêng thì nó không tự mở ra đọc <span class="tag">Đáp án</span></li>
+    <li data-k="B">Vì file riêng chiếm nhiều dung lượng</li>
+    <li data-k="C">Vì Claude không đọc được file đặt tên khác</li>
+    <li data-k="D">Vì gộp vào một chỗ nhìn cho gọn</li>
+  </ul>
+</div>
+
+<div class="q">
+  <p><b>12.</b> Skill và agent khác nhau chỗ nào?</p>
+  <ul class="opt">
+    <li data-k="A">Agent chạy nhanh hơn skill</li>
+    <li data-k="B">Skill chỉ dùng được đúng một lần</li>
+    <li data-k="C">Agent không cần viết mô tả</li>
+    <li data-k="D" class="ok">Skill trả lời "làm việc này thế nào", agent trả lời "ai làm và được đụng vào những gì" <span class="tag">Đáp án</span></li>
+  </ul>
+</div>
+
+<div class="q">
+  <p><b>13.</b> Vì sao nên giao việc phụ nặng cho một trợ lý phụ, thay vì làm hết trong cửa sổ chính?</p>
+  <ul class="opt">
+    <li data-k="A">Vì trợ lý phụ thông minh hơn</li>
+    <li data-k="B">Vì trợ lý phụ lúc nào cũng nhanh hơn</li>
+    <li data-k="C" class="ok">Vì nó làm trong phòng riêng, màn hình chính của anh chị không bị đổ đầy tài liệu vào <span class="tag">Đáp án</span></li>
+    <li data-k="D">Vì như vậy thì không tốn tiền</li>
+  </ul>
+</div>
+
+<div class="q">
+  <p><b>14.</b> Trong file agent, dòng ghi công cụ (<code>tools:</code>) có tác dụng gì?</p>
+  <ul class="opt">
+    <li data-k="A">Chỉ là ghi chú cho người đọc file</li>
+    <li data-k="B" class="ok">Là cái khóa thật: con nào không có công cụ ghi file thì không sửa được file của anh chị <span class="tag">Đáp án</span></li>
+    <li data-k="C">Quyết định dùng model nào</li>
+    <li data-k="D">Đặt tên hiển thị cho agent</li>
+  </ul>
+</div>
+
+<div class="q">
+  <p><b>15.</b> Vì sao nên giữ file <code>CLAUDE.md</code> ngắn?</p>
+  <ul class="opt">
+    <li data-k="A">Vì file dài dễ bị lỗi</li>
+    <li data-k="B">Vì Claude chỉ đọc được 80 dòng đầu</li>
+    <li data-k="C">Vì viết dài thì mình khó nhớ</li>
+    <li data-k="D" class="ok">Vì nó được đọc lại ở đầu mỗi phiên, dài bao nhiêu thì mỗi phiên tốn thêm bấy nhiêu token <span class="tag">Đáp án</span></li>
+  </ul>
+</div>
+
+<div class="q">
+  <p><b>16.</b> Vì sao nên dùng một agent riêng để soát lại kết quả của agent khác, thay vì để một agent vừa làm vừa tự soát?</p>
+  <ul class="opt">
+    <li data-k="A">Vì hai agent chạy nhanh hơn một agent</li>
+    <li data-k="B" class="ok">Vì ai viết xong đọc lại bài mình cũng thấy ổn, agent soát đọc bằng con mắt lạ nên bắt được lỗi agent viết bỏ qua <span class="tag">Đáp án</span></li>
+    <li data-k="C">Vì Claude bắt buộc phải có đủ hai agent</li>
+    <li data-k="D">Vì tách ra thì đỡ tốn tiền hơn</li>
+  </ul>
+</div>
+
+<div class="q">
+  <p><b>17.</b> Agent chuyên đi soát lại kết quả nên được cấp quyền gì?</p>
+  <ul class="opt">
+    <li data-k="A">Cho sửa file luôn để nó chữa cho nhanh</li>
+    <li data-k="B">Không cho đọc file nào cả</li>
+    <li data-k="C">Cấp toàn quyền y như agent viết</li>
+    <li data-k="D" class="ok">Chỉ cho đọc, không cho sửa file <span class="tag">Đáp án</span></li>
+  </ul>
+</div>
+
+<div class="q">
+  <p><b>18.</b> Chạy cả dây chuyền so với nhờ thẳng một câu thì thế nào?</p>
+  <ul class="opt">
+    <li data-k="A">Nhanh hơn và rẻ hơn</li>
+    <li data-k="B" class="ok">Chậm hơn và tốn hơn, đổi lại có người soát nên chất lượng ổn định <span class="tag">Đáp án</span></li>
+    <li data-k="C">Giống hệt nhau, chỉ khác cách gọi</li>
+    <li data-k="D">Nhanh hơn nhưng kém chính xác</li>
+  </ul>
+</div>
+
+<div class="q">
+  <p><b>19.</b> Chatbot khác agent chỗ nào?</p>
+  <ul class="opt">
+    <li data-k="A">Agent thông minh hơn hẳn</li>
+    <li data-k="B">Chatbot không trả lời được câu khó</li>
+    <li data-k="C" class="ok">Agent được lắp thêm tay chân (công cụ), trí nhớ và đồng hồ, nên nó làm được chứ không chỉ nói <span class="tag">Đáp án</span></li>
+    <li data-k="D">Agent chạy được khi không có mạng</li>
+  </ul>
+</div>
+
+<div class="q">
+  <p><b>20.</b> Một agent chạy ra kết quả sai, và lần nào cũng sai đúng kiểu đó. Nên làm gì?</p>
+  <ul class="opt">
+    <li data-k="A" class="ok">Sửa thẳng vào file định nghĩa agent đó, chữa một lần là dùng được mãi <span class="tag">Đáp án</span></li>
+    <li data-k="B">Mỗi lần chạy lại dặn thêm một câu trong khung chat</li>
+    <li data-k="C">Xóa agent đi rồi quay lại làm tay</li>
+    <li data-k="D">Đổi sang model đắt tiền hơn</li>
+  </ul>
+</div>
+
+<h2><span class="n">2</span>Thực hành - chọn một trong hai hướng</h2>
+<p class="lead">
+  Chỉ cần làm <strong>một</strong> hướng, hướng nào hợp máy của anh chị hơn thì chọn hướng đó.
+  Không cần lập agent, không cần dây chuyền. Chọn một việc anh chị làm đi làm lại hằng tuần
+  rồi đóng gói lại cho lần sau đỡ mất công.
+</p>
+
+<div class="route">
+  <h3>Hướng A - dùng Claude Code</h3>
+  <p class="who">Hợp với anh chị đã cài Claude Code và có sẵn thư mục làm việc từ buổi 12.</p>
+  <ol>
+    <li>Mở Claude Code tại thư mục làm việc của mình. Kiểm tra đã có file <code>CLAUDE.md</code> chưa, chưa có thì nhờ Claude viết lại như buổi 12.</li>
+    <li>Chọn <strong>một việc anh chị làm đi làm lại</strong>: soạn báo cáo tuần, trả lời một loại thư hay gặp, làm sạch một loại file, gì cũng được.</li>
+    <li>Nhờ Claude đóng gói việc đó thành một skill. Nói với nó: việc này gồm những bước nào, cần hỏi lại mình những gì, chỗ nào thiếu dữ liệu thì để trống chứ đừng tự bịa.</li>
+    <li>Thử lại <strong>hai lần</strong> trên hai trường hợp khác nhau, xem nó có tự chạy đủ các bước không.</li>
+  </ol>
+</div>
+
+<div class="route">
+  <h3>Hướng B - chỉ dùng claude.ai, không cài gì</h3>
+  <p class="who">Hợp với anh chị chưa cài được Claude Code, hoặc quen làm trên web hơn.</p>
+  <ol>
+    <li>Tạo một Project mới trên claude.ai, đặt tên theo việc mình chọn.</li>
+    <li>Viết phần hướng dẫn (Instructions) cho Project: mình là ai, làm việc gì, giọng văn thế nào, có từ nào cấm dùng, và chỗ nào thiếu thông tin thì phải hỏi lại chứ không được tự bịa.</li>
+    <li>Nạp vào Project một hai tài liệu thật mà việc đó hay phải tra tới (đã xóa thông tin nhạy cảm).</li>
+    <li>Thử giao việc <strong>hai lần</strong> trên hai trường hợp khác nhau, xem nó có bám đúng giọng và đúng tài liệu không.</li>
+  </ol>
+</div>
+
+<div class="box">
+  <h3>Nộp những gì</h3>
+  <ol>
+    <li><strong>Hai ảnh chụp màn hình:</strong> một ảnh cho thấy thứ anh chị vừa dựng (skill hoặc phần hướng dẫn của Project), một ảnh kết quả nó chạy ra.</li>
+    <li><strong>Trả lời ba câu ngắn</strong>, mỗi câu một hai dòng thôi:</li>
+  </ol>
+  <ul style="margin-top:8px">
+    <li>Việc anh chị chọn là gì, mỗi tuần làm mấy lần?</li>
+    <li>Trước đây mỗi lần làm mất khoảng bao lâu, giờ mất khoảng bao lâu?</li>
+    <li>Chỗ nào anh chị vẫn phải tự đọc lại, không dám để AI làm thay?</li>
+  </ul>
+  <p class="note">
+    Câu thứ ba là câu quan trọng nhất. Người dùng AI giỏi không phải người giao được nhiều
+    việc nhất, mà là người biết rõ chỗ nào phải giữ lại cho mình.
+  </p>
+</div>
+
+<div class="box">
+  <h3>Nếu bí</h3>
+  <ul>
+    <li>Không nghĩ ra việc nào: mở lại lịch làm việc tuần trước, tìm việc nào lặp lại ở cả hai tuần.</li>
+    <li>Không biết bắt đầu câu lệnh thế nào: gõ thẳng <em>"Tôi hay phải làm việc [tên việc]. Hỏi tôi từng câu một để hiểu tôi đang làm thế nào, rồi đóng gói lại giúp tôi."</em></li>
+    <li>Làm xong thấy kết quả chưa ưng: đó là chuyện bình thường, cứ nộp kèm chỗ chưa ưng, buổi sau ta chữa.</li>
+  </ul>
+</div>
+
+<footer>
+  © CES Global - Chương trình "30 Ngày Làm Chủ AI Agent". Bài tập cuối khóa, chữa vào buổi 20.
+</footer>
+
+</div>
+</body>
+</html>
