@@ -41,6 +41,21 @@ Claude lúc mới mở ra cũng đúng như cộng tác viên đó. Nó thông m
 
 **Tờ giới thiệu ấy, trong Claude Code, chính là file `CLAUDE.md`.** Bạn để nó ngay trong thư mục làm việc. Mỗi lần mở phiên, việc đầu tiên Claude làm là đọc nó, y như nhân viên mới tới bàn là cầm tờ giới thiệu đọc trước. Bạn không phải kể lại bối cảnh mỗi lần nữa.
 
+**Nếu bạn còn nhớ tuần 1:** hồi đó mỗi lần lập một trợ lý trên claude.ai, việc đầu tiên luôn là vào Projects, tạo project, rồi dán nội dung vào ô **Instructions** ở cột bên phải màn hình. Ô đó chính là bộ não của trợ lý, Claude đọc nó trước mọi câu bạn hỏi trong project.
+
+`CLAUDE.md` chính là ô Instructions đó. Vai trò y hệt, chỉ khác chỗ đặt: trên web nó là một ô bạn gõ vào, trong Claude Code nó là một file nằm ngay trong thư mục làm việc.
+
+| Tuần 1, trên claude.ai | Từ buổi 12, trong Claude Code |
+|---|---|
+| Ô **Instructions** trong Project | File `CLAUDE.md` trong thư mục |
+| Ô **Context**, kéo tài liệu vào | Các file bạn để trong thư mục |
+| Sửa bằng cách bấm bút chì rồi gõ tay | Sửa bằng cách nhờ chính Claude viết lại |
+| Chỉ áp dụng trong đúng project đó | Áp dụng cho mọi phiên mở tại thư mục đó |
+
+Vẫn là một cách nghĩ duy nhất từ buổi 1 tới giờ: đưa trước bối cảnh, rồi mới giao việc.
+
+Giảng viên: mở lại một Project cũ của tuần 1 trên claude.ai, chỉ thẳng vào ô Instructions bên phải màn hình rồi nói "cái ô này, sang Claude Code chính là file `CLAUDE.md`". Học viên nhìn thấy chỗ cũ mình từng dán tay thì hiểu ngay, không cần giải thích thêm.
+
 Hai điều cần nhớ:
 
 - **Chỉ đưa vào thứ luôn đúng cho mọi việc.** Bạn là ai, bán gì, giọng thế nào, từ cấm. Còn quy trình cho từng việc cụ thể thì để dành cho skill, tức là những thứ bạn đã đóng gói từ tuần 2.
@@ -69,6 +84,8 @@ Học viên không bán khóa học thì thay bằng sản phẩm hoặc dịch 
 **Bước 2. Nhờ Claude phỏng vấn rồi viết hồ sơ thương hiệu**
 
 Để làm gì: tạo file `CLAUDE.md`. Bạn không tự gõ, để Claude hỏi rồi nó viết.
+
+Việc này giống hệt lúc bạn dán nội dung vào ô Instructions của Project ở tuần 1, chỉ khác một điểm: lần này bạn không phải tự soạn tay, Claude phỏng vấn bạn rồi tự viết ra file.
 
 Gõ vào Claude:
 
@@ -122,6 +139,8 @@ Bạn có nhớ gì về tôi không?
 ```
 
 Bạn sẽ thấy: Claude kể lại đúng bạn là ai, bán gì, giọng văn thế nào, kênh nào. Nó đọc những thứ đó từ `CLAUDE.md` chứ không phải nhớ từ đoạn chat vừa rồi.
+
+Ở tuần 1 bạn phải mở đúng project thì mới có phần Instructions. Ở đây chỉ cần mở Claude Code đúng thư mục, nó tự đọc `CLAUDE.md` ngay từ đầu phiên.
 
 ---
 
@@ -260,6 +279,7 @@ Tự tay làm được:
 - [ ] Mục "Cấu trúc thư mục" nằm trong `CLAUDE.md`, khớp với các thư mục có thật
 
 Hiểu để dùng sau:
+- [ ] Hiểu `CLAUDE.md` chính là ô Instructions của Project ở tuần 1, chỉ khác là ở dạng file trong thư mục
 - [ ] Phân biệt được `CLAUDE.md` (bạn là ai, luôn được đọc) với skill (cách làm một việc)
 - [ ] Biết phép thử một câu để soát bài viết còn chung chung hay đã gắn với thương hiệu
 - [ ] Biết vì sao mục lục phải viết thẳng vào `CLAUDE.md` chứ không để một file riêng
