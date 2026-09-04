@@ -228,3 +228,43 @@ tải. Nếu tôi đã có danh sách việc quen thuộc từ trước, cứ d�
 - Anh chị lập được kế hoạch cho tuần thật của mình + chỉnh ưu tiên ít nhất 1 lần.
 - Anh chị đặt được 1 lịch tự chạy (hoặc nắm được cách chạy thủ công thay thế).
 - Anh chị nêu được ước lượng thời gian tiết kiệm mỗi sáng khi lập kế hoạch (phục vụ mẫu báo cáo hiệu quả trước - sau của khóa).
+
+---
+
+## E. Mở rộng: Tự viết Instructions bằng Meta Prompt (nâng cao, làm thêm ở nhà)
+
+> "Anh chị vừa học xong cách đặt Scheduled để một Project tự chạy định kỳ. Nhưng có một câu hỏi quan trọng hơn: cái đang tự chạy đó - bộ Instructions trong ô Project - ai là người viết ra nó cho đúng, cho sát việc của mình? Từ đầu tuần đến giờ toàn là em đưa sẵn bộ não để anh chị dán vào. Phần mở rộng này em chỉ anh chị cách TỰ TẠO ra bộ não đó, bằng chính Claude, cho bất kỳ trợ lý nào anh chị muốn dựng sau này - không cần chờ em soạn sẵn nữa."
+
+> "Cách làm gọi là **Meta Prompt**: thay vì tự ngồi viết Instructions, mình nhờ Claude viết Instructions giúp mình, theo một khung có sẵn 8 mục. Anh chị đọc kỹ khối câu lệnh dưới đây, rồi **sửa lại phần mô tả nhu cầu** (đoạn mở đầu và các mục 1-8) cho đúng với công việc thật của anh chị - đừng copy y nguyên, vì bản mẫu dưới đây đang mô tả một trợ lý lập kế hoạch, còn anh chị có thể cần một trợ lý khác hẳn."
+
+## F — Meta prompt để Claude viết ra Instructions**
+
+> "Anh chị mở một cuộc trò chuyện thường với Claude (chưa cần mở Project), dán khối câu lệnh này vào - nhớ đọc và chỉnh lại nội dung trong ngoặc cho đúng ý mình trước khi gửi:"
+
+```
+Tôi muốn tạo một trợ lý trong Claude để lập kế hoạch ngày/tuần từ danh sách việc lộn xộn, bằng tiếng Việt.
+
+Hãy viết cho tôi phần INSTRUCTIONS hoàn chỉnh để tôi dán vào Project,
+gồm các mục sau:
+1. VAI TRÒ (trợ lý lập kế hoạch cho nhân viên văn phòng Việt Nam)
+2. NHIỆM VỤ (biến danh sách việc lộn xộn thành kế hoạch có thứ tự ưu tiên
+   và khung giờ cụ thể)
+3. ĐẦU VÀO (bắt buộc: danh sách việc và số giờ làm việc thực có mỗi ngày;
+   tùy chọn: hạn chót từng việc, việc cố định như họp, mức độ quan trọng)
+4. QUY TRÌNH XỬ LÝ
+5. ĐỊNH DẠNG ĐẦU RA gồm 4 phần: (1) Việc quan trọng nhất - đúng 1 việc;
+   (2) Bảng ưu tiên A/B/C kèm ước lượng thời gian; (3) Lịch xếp theo ngày;
+   (4) Cảnh báo tải và đề xuất cắt giảm
+6. QUY TẮC & AN TOÀN (đối chiếu tổng giờ cần làm với số giờ thực có, cảnh
+   báo khi quá tải; luôn chừa ít nhất 10% thời gian đệm; chỉ dùng thông
+   tin tôi cung cấp, không bịa; thiếu thì đánh dấu [cần xác nhận])
+7. BẢNG KIỂM để trợ lý tự rà trước khi trả kết quả
+8. KHỞI ĐỘNG: hỏi tôi danh sách việc và số giờ làm việc thực có. Nếu tôi
+   đã cho biết bối cảnh công việc trước đó thì dùng lại, đừng hỏi lại.
+
+Viết sẵn để tôi copy dán vào ô Instructions của Project.
+```
+
+> "Lưu ý khi sửa lại cho đúng việc của anh chị: đổi câu mở đầu ('trợ lý lập kế hoạch' -> đổi thành đúng loại trợ lý anh chị cần, ví dụ trợ lý trả lời khách hàng, trợ lý kiểm tra hợp đồng, trợ lý viết nội dung...); đổi mục 1 VAI TRÒ và mục 3 ĐẦU VÀO cho khớp thông tin trợ lý đó cần hỏi; đổi mục 5 ĐỊNH DẠNG ĐẦU RA cho đúng loại kết quả anh chị muốn nhận. Các mục 6-8 (an toàn, bảng kiểm, khởi động) thường giữ nguyên tinh thần, chỉ đổi vài từ cho khớp ngữ cảnh."
+
+> "Claude sẽ trả về một khối Instructions hoàn chỉnh. Anh chị copy khối đó, tạo Project mới, dán vào ô Instructions - vậy là có thêm một trợ lý nữa do chính tay anh chị 'thiết kế bộ não', không cần chờ ai soạn sẵn. Đây chính là kỹ năng gốc để anh chị tự nhân rộng ra bao nhiêu trợ lý tùy nhu cầu công việc, sau khi khóa học kết thúc."
