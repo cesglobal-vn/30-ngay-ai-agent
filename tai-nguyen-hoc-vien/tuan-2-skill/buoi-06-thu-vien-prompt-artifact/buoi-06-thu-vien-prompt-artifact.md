@@ -50,7 +50,7 @@ Tạo cho tôi một trang trình bày kết quả công việc trong tháng đ�
 
 ---
 
-## 4. Lịch nội dung mạng xã hội
+## Làm ở nhà: Lịch nội dung mạng xã hội
 
 **Công dụng:** Lên kế hoạch bài đăng trong tuần: ngày, nền tảng, nội dung, trạng thái (Ý tưởng/Đang làm/Đã đăng). Nhìn phát thấy tuần này đăng gì, ở đâu, xong chưa. Hợp với marketing, chủ shop, người làm content.
 
