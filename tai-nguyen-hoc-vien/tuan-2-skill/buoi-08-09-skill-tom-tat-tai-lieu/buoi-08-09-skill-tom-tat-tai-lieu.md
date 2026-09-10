@@ -5,6 +5,7 @@
 >
 > **Công cụ:** Claude Code (đã cài từ bài tập Buổi 07).
 > **Chuẩn bị:** thư mục dự án (ví dụ `hoc-ai-agent`), bên trong có thư mục `tai-lieu` chứa:
+>
 > - `tai-lieu-mau-bao-cao-tong-ket-2026.pdf` (14 trang - dùng ở Buổi 08)
 > - `tai-lieu-mau-hop-dong-dich-vu.pdf` (hợp đồng mẫu từ Buổi 02 - dùng ở Buổi 09)
 >
@@ -105,13 +106,13 @@ Mở file .claude/skills/tom-tat-tai-lieu/SKILL.md cho tôi xem
 
 Đối chiếu từng mục với 5 lượt vừa hỏi:
 
-| Trong SKILL.md | Sinh ra từ |
-|---|---|
-| TÓM TẮT NHANH | Lượt 5 |
-| Ý CHÍNH CHI TIẾT | Lượt 2 |
-| SỐ LIỆU, NGÀY THÁNG, HẠN CHÓT | Lượt 3 |
-| ĐIỂM CẦN LƯU Ý / RỦI RO | Lượt 4 |
-| QUY TẮC | Lượt 5 |
+| Trong SKILL.md                      | Sinh ra từ |
+| ----------------------------------- | ----------- |
+| TÓM TẮT NHANH                     | Lượt 5    |
+| Ý CHÍNH CHI TIẾT                 | Lượt 2    |
+| SỐ LIỆU, NGÀY THÁNG, HẠN CHÓT | Lượt 3    |
+| ĐIỂM CẦN LƯU Ý / RỦI RO       | Lượt 4    |
+| QUY TẮC                            | Lượt 5    |
 
 > **Câu cần nhớ:** skill không phải mẫu tải ở đâu về - nó là **biên bản của những lượt mình đã phải hỏi**, ghi lại một lần để khỏi phải hỏi nữa.
 
@@ -128,6 +129,7 @@ Tóm tắt hợp đồng trong tai-lieu/tai-lieu-mau-hop-dong-dich-vu.pdf
 Không nhắc tới skill, không dặn 5 mục. Claude tự nạp skill nhờ dòng `description`.
 
 **Tự nghiệm thu - bản tóm tắt phải bóc đúng:**
+
 - Tổng giá trị **1.320.000.000 đồng** (đã gồm VAT 10%); thanh toán **3 đợt**: 528 / 528 / 264 triệu.
 - Gói Doanh nghiệp **tối đa 50 người dùng đồng thời**; đào tạo **5 lớp**.
 - Ký **05/01/2026**; golive **10/04/2026**; bảo hành 12 tháng tới **10/04/2027**.
@@ -157,7 +159,7 @@ Hợp đồng này có cho phép Bên A chuyển nhượng hợp đồng cho cô
 
 > **Nhớ:** với hợp đồng và số liệu, **thà nói không có còn hơn đoán sai**. Và skill giảm rủi ro chứ không xóa rủi ro - người đọc vẫn phải kiểm.
 
-### 3. Chạy trên tài liệu công việc thật
+### 3. Chạy trên tài liệu công việc thật (Bài Tập Về Nhà)
 
 ```
 Tóm tắt tài liệu trong tai-lieu/[tên-file-của-anh-chị]
@@ -173,7 +175,7 @@ Dùng skill tom-tat-tai-lieu để tóm tắt tài liệu trong tai-lieu/[tên-f
 
 > Nhớ che thông tin nhạy cảm trước khi đưa tài liệu công việc vào.
 
-### 4. Cho skill lớn dần theo nghề mình
+### 4. Cho skill lớn dần theo nghề mình (Bài Tập Về Nhà)
 
 Thêm mục hợp với nghề:
 
