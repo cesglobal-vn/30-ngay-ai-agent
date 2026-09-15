@@ -75,7 +75,7 @@ Cùng một tư duy "giao việc có cấu trúc" (đầu vào - đầu ra - cá
 
 - [x] Tuần 1 (Buổi 01-05) - Mức 1 Project: viết thư, tóm tắt tài liệu, ghi chú họp, lập kế hoạch, viết báo cáo. Làm chủ 4 tính năng Project (Instructions, Context, Memory, Scheduled).
 - [x] Tuần 2 (Buổi 06-10) - Mức 2: Artifact (B06) và Skill - đóng gói tài liệu (B07), tóm tắt tài liệu (B08-09), tạo slide (B10). Biết **ba cách để có một skill**: nhờ Claude đóng gói / tự sinh từ các lượt hỏi / cài skill viết sẵn.
-- [x] Buổi 11 - Chốt Mức 2: skill làm sạch dữ liệu. Buổi duy nhất đảo khung (học viên tự làm trước, giảng viên chữa sau) và có bài chấm điểm.
+- [x] Buổi 11 - Chốt Mức 2: skill làm sạch dữ liệu, hands-on cùng chuỗi 10 câu lệnh (không còn để học viên tự mò trước).
 - [ ] Buổi 12-20 - đang soạn theo khuôn.
 
 *© CES Global - Bộ tài liệu chương trình "30 Ngày Làm Chủ AI Agent".*
