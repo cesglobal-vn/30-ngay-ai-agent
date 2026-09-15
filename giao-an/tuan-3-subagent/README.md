@@ -10,11 +10,11 @@ Buổi 11 khép lại mảng Skill bằng một bài làm sạch dữ liệu th�
 
 ## Buổi 11
 
-Hands-on song song như mọi buổi khác: học viên có sẵn đủ 10 câu lệnh trong file phát, gõ theo cùng lúc với giảng viên, dừng đối chiếu kết quả sau mỗi bước.
+Hands-on song song như mọi buổi khác: học viên có sẵn đủ 7 câu lệnh trong file phát (làm trong khoảng 15 phút), gõ theo cùng lúc với giảng viên, chạy liên tục không dừng thảo luận. Thời gian còn lại (20-45p) dành riêng cho giảng viên.
 
 File của buổi 11:
-- `buoi-11-skill-lam-sach-du-lieu.md` - giáo án (chuỗi 10 câu lệnh + bẫy cần chỉ ra)
-- `dap-an-loi-da-gieo.md` - **CHỈ GIẢNG VIÊN**, đừng gửi nhóm lớp - dùng để đối chiếu số liệu, lỗi đã gieo sẵn trong file mẫu
+- `buoi-11-skill-lam-sach-du-lieu.md` - giáo án (chuỗi 7 câu lệnh + phụ lục bẫy cho GV đọc trước ở nhà)
+- `buoi-11-dap-an-loi-da-gieo.md` - **CHỈ GIẢNG VIÊN**, đừng gửi nhóm lớp - dùng để đối chiếu số liệu, lỗi đã gieo sẵn trong file mẫu
 
 > Nguyên tắc: các prompt cố ý viết như của người chưa biết gì về file, để cả lớp thấy Claude tự tìm ra vấn đề thật sự. Giảng viên cầm file đáp án đối chiếu, không đọc đáp án thành lời trước khi học viên tự thấy kết quả.
 

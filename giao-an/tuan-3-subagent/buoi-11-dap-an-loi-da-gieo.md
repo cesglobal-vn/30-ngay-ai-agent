@@ -7,7 +7,7 @@ Bản A dùng dạy và làm bài tại lớp. Bản B dùng để chứng minh 
 
 ## Bản A (dùng tại lớp)
 
-File: `tai-lieu-mau-don-hang-2026-ban-a.csv` (và bản .xlsx cùng tên) - **500 dòng, 21 cột**
+File: `buoi-11-don-hang-2026-ban-a.csv` (và bản .xlsx cùng tên) - **500 dòng, 21 cột**
 
 ### Nhóm SỬA ĐƯỢC an toàn (máy tự xử lý, không cần hỏi)
 
@@ -97,7 +97,7 @@ DH2026-0002, DH2026-0057, DH2026-0060, DH2026-0087, DH2026-0120, DH2026-0127, DH
 
 ## Bản B (chứng minh tái dùng)
 
-File: `tai-lieu-mau-don-hang-2026-ban-b.csv` (và bản .xlsx cùng tên) - **500 dòng, 21 cột**
+File: `buoi-11-don-hang-2026-ban-b.csv` (và bản .xlsx cùng tên) - **500 dòng, 21 cột**
 
 ### Nhóm SỬA ĐƯỢC an toàn (máy tự xử lý, không cần hỏi)
 
