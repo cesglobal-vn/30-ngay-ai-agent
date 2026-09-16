@@ -24,6 +24,15 @@ Tất cả file nằm trong `buoi-12-nen-tang-du-an-claude/`.
 | `buoi-12-nen-tang-du-an-claude.md` | Đầu buổi | **File chính phát cho học viên** - lý thuyết + 7 bước thao tác (dạy CLAUDE.md, dựng cấu trúc thư mục, ghi mục lục), tự học được không cần giảng viên đứng cạnh |
 | `buoi-12-nen-tang-du-an-claude.docx` / `.pdf` | Đầu buổi | Bản Word/PDF cùng nội dung, tiện in/gửi |
 
-## Buổi 13-15 - Subagent
+## Buổi 13 - Trợ lý phụ và agent riêng
+
+Tất cả file nằm trong `buoi-13-tro-ly-phu-va-agent-rieng/`.
+
+| File | Gửi khi nào | Nội dung |
+|---|---|---|
+| `buoi-13-tro-ly-phu-va-agent-rieng.md` | Đầu buổi | **File chính phát cho học viên** - 5 phần lý thuyết + thao tác (agent/subagent là gì, lập trợ lý riêng, skill vs agent, agent team, token), tự học được không cần giảng viên đứng cạnh |
+| `buoi-13-tro-ly-phu-va-agent-rieng.docx` | Đầu buổi | Bản Word cùng nội dung, tiện in/gửi |
+
+## Buổi 14-15 - Subagent
 
 Nơi để các file subagent phát cho học viên, dạng `.claude/agents/<ten>.md` cho Claude Code. Sẽ bổ sung khi soạn từng buổi.
