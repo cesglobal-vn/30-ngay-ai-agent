@@ -30,7 +30,9 @@ Tôi cần làm landing page cho [tên sản phẩm/dịch vụ]. Hãy liệt k�
 
 ---
 
-**Bước 3. Bản demo của giảng viên (chiếu lên cho lớp xem mức độ cụ thể cần có)**
+**Bước 3. Ví dụ tham khảo (mức độ chi tiết cần điền)**
+
+Chưa hình dung nên điền mẫu ở Bước 1 chi tiết tới đâu thì xem ví dụ sau:
 
 ```
 - Đây là thông tin đã điền:
@@ -66,6 +68,8 @@ Chỗ `...` điền đường dẫn thư mục chứa file HTML vừa tạo.
 Đọc toàn bộ source code tại ... và chuyển đổi hoàn toàn sang một dự án Next.js. Sử dụng TypeScript, TailwindCSS để style cho pixel-perfect với bản gốc, và thêm các hiệu ứng chuyển động bằng Framer Motion (ví dụ: fade-in khi cuộn trang, hover button). Hãy tách các block thành các thư mục components riêng biệt và code phải sẵn sàng cho production.
 ```
 
+Bước này phải tải thư viện, có thể mất vài phút - cứ chờ, không phải bị treo.
+
 ---
 
 **Bước 6. Chạy thử trên máy mình**
@@ -81,6 +85,8 @@ chạy project luôn và cho tôi link localhost để tôi vào xem nhé
 ```
 Tôi muốn deploy landingpage này lên vercel. Tôi đã có tài khoản vercel rồi, hướng dẫn tôi cách đưa lên nhé. Nếu cần cài đặt gì thì bạn làm cho tôi luôn. Tôi không chuyên code nên hướng dẫn tôi từng bước cách làm
 ```
+
+Chưa có git và tài khoản GitHub cũng không sao: nhờ Claude chạy thẳng `npx vercel` từ thư mục dự án, khỏi phải qua GitHub.
 
 ---
 
@@ -106,13 +112,12 @@ api key: Tạo cho tôi file .env, biến tên DEEPSEEK_API_KEY, để tôi đi�
 Có gì không hiểu thì hỏi lại tôi
 ```
 
-Học viên thay khối thông tin chuyên gia bằng thông tin thật của mình.
+Bạn thay khối thông tin chuyên gia bằng thông tin thật của mình.
+
+Nếu báo lỗi model không tồn tại thì đổi sang tên model khác có trong tài khoản của mình.
 
 ---
 
-## Lưu ý khi đứng lớp
+## Lưu ý
 
-- Bước 5 và 6 phải tải thư viện, có thể mất vài phút. Đây là lúc nói tiếp chứ đừng để lớp nhìn màn hình im lặng.
-- Bước 7: nếu lớp chưa có git và tài khoản GitHub, để Claude dùng cách chạy thẳng `npx vercel` từ thư mục dự án, khỏi qua GitHub.
-- Bước 8: nếu báo lỗi model không tồn tại thì đổi sang tên model khác có trong tài khoản của mình.
-- Khóa API nằm trong file `.env`, không đưa lên mạng, không gửi vào nhóm lớp.
+- Khóa API nằm trong file `.env` - không đưa lên mạng, không chia sẻ công khai.

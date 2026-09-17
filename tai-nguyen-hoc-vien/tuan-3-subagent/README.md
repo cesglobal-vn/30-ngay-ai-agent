@@ -33,6 +33,11 @@ Tất cả file nằm trong `buoi-13-tro-ly-phu-va-agent-rieng/`.
 | `buoi-13-tro-ly-phu-va-agent-rieng.md` | Đầu buổi | **File chính phát cho học viên** - 5 phần lý thuyết + thao tác (agent/subagent là gì, lập trợ lý riêng, skill vs agent, agent team, token), tự học được không cần giảng viên đứng cạnh |
 | `buoi-13-tro-ly-phu-va-agent-rieng.docx` | Đầu buổi | Bản Word cùng nội dung, tiện in/gửi |
 
-## Buổi 14-15 - Subagent
+## Buổi 14-15-16 - Landing page và chatbot
 
-Nơi để các file subagent phát cho học viên, dạng `.claude/agents/<ten>.md` cho Claude Code. Sẽ bổ sung khi soạn từng buổi.
+Tất cả file nằm trong `buoi-14-15-16-lam-landing-page-va-chatbot/`.
+
+| File | Gửi khi nào | Nội dung |
+|---|---|---|
+| `buoi-14-15-16-lam-landing-page-va-chatbot.md` | Đầu buổi 14 | **File chính phát cho học viên** - 8 bước copy-dán xuyên 3 buổi: viết nội dung trang (B14), dựng trang + đưa lên mạng (B15), gắn chatbot dùng DeepSeek API (B16) |
+| `buoi-14-15-16-lam-landing-page-va-chatbot.docx` | Đầu buổi 14 | Bản Word cùng nội dung, tiện in/gửi |
