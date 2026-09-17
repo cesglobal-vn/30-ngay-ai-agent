@@ -131,10 +131,10 @@ Thông tin cho chatbot thì bạn hãy tạo một file `chatbot_data.txt` (đ�
 - Khóa học nổi bật: Khóa K89 - Thực chiến Agentic AI & Tự động hóa (Thời gian học: 12 buổi, hình thức Online Zoom).
 - Liên hệ tư vấn: Email a@example.com hoặc Zalo 0123456789.
 
-Thông tin cấu hình API (OpenAI-compatible API) như sau:
-Base URL: https://generativelanguage.googleapis.com/v1beta/openai
-Model: gemini-3.5-flash-lite
-api key: Tạo cho tôi file .env để tôi điền vào nhé
+Thông tin cấu hình API (dùng OpenAI SDK, OpenAI-compatible API) như sau:
+Base URL: https://api.deepseek.com
+Model: deepseek-flash
+api key: Tạo cho tôi file .env, biến tên DEEPSEEK_API_KEY, để tôi điền vào nhé
 
 Có gì không hiểu thì hỏi lại tôi /
 Sử dụng subagent fullstack-developer để làm nhé
