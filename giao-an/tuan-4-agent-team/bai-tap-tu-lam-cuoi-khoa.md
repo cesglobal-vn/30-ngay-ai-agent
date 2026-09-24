@@ -1,5 +1,8 @@
-# Buổi 20: Chữa bài cuối khóa và chốt lại thứ mang về
+# Bài tập tự làm cuối khóa - Chữa bài và chốt lại thứ mang về
 
+> File này không nằm trong 20 buổi đánh số - dùng làm buổi phụ (hoặc bài tập tự làm) sau khi
+> học viên đã nộp bài tập cuối khóa, để chữa bài và chốt lại toàn khóa.
+>
 > Cách dùng file này: mỗi phần có hai khúc. Khúc **Lý thuyết** đọc để hiểu mình sắp làm gì
 > và vì sao. Khúc **Thao tác** là các bước có sẵn prompt, cứ copy dán vào Claude.
 >
