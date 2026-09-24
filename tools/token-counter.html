@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Token Counter - 30 Ngày AI Agent</title>
+  <style>
+    :root { color-scheme: light dark; font-family: system-ui, sans-serif; }
+    body { max-width: 1100px; margin: 0 auto; padding: 24px; line-height: 1.45; }
+    textarea, input, select, button { font: inherit; }
+    textarea { width: 100%; min-height: 180px; box-sizing: border-box; padding: 12px; }
+    input, select, button { padding: 8px 10px; margin: 4px 4px 4px 0; }
+    button { cursor: pointer; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; margin: 16px 0; }
+    .card { border: 1px solid #8885; border-radius: 10px; padding: 14px; }
+    .number { display: block; font-size: 1.6rem; font-weight: 700; }
+    .muted { opacity: .75; }
+    .error { color: #d33; }
+    table { width: 100%; border-collapse: collapse; margin-top: 16px; }
+    th, td { text-align: left; padding: 8px; border-bottom: 1px solid #8885; }
+    th { cursor: pointer; }
+    code { word-break: break-all; }
+  </style>
+</head>
+<body>
+  <h1>Kiểm tra lượng token</h1>
+  <p class="muted">Công cụ ước tính token cho prompt/tài liệu. Đây là ước tính offline, không phải số token thực tế do API tính.</p>
+
+  <section class="card">
+    <h2>1. Đếm đoạn văn bản</h2>
+    <textarea id="text" placeholder="Dán prompt, nội dung tài liệu hoặc CLAUDE.md vào đây..."></textarea>
+    <label>Mô hình ước tính:
+      <select id="model">
+        <option value="4">Chung: khoảng 1 token / 4 ký tự</option>
+        <option value="3">Tiếng Việt nhiều dấu: khoảng 1 token / 3 ký tự</option>
+        <option value="5">Tiếng Anh đơn giản: khoảng 1 token / 5 ký tự</option>
+      </select>
+    </label>
+    <div class="grid" id="textStats"></div>
+  </section>
+
+  <section class="card">
+    <h2>2. Quét tài liệu trong GitHub repository</h2>
+    <p class="muted">Mặc định quét <code>giao-an/</code>. Có thể nhập <code>tai-nguyen-hoc-vien/</code> hoặc để trống để quét toàn repo.</p>
+    <input id="repo" size="46" value="cesglobal-vn/30-ngay-ai-agent" aria-label="GitHub repository">
+    <input id="path" value="giao-an/" aria-label="Directory path" placeholder="Đường dẫn, ví dụ giao-an/">
+    <button id="scan">Quét repository</button>
+    <p id="status" class="muted"></p>
+    <div class="grid" id="repoStats"></div>
+    <table hidden id="results">
+      <thead><tr><th data-sort="path">File</th><th data-sort="chars">Ký tự</th><th data-sort="words">Từ</th><th data-sort="tokens">Token ước tính</th></tr></thead>
+      <tbody></tbody>
+    </table>
+  </section>
+
+  <script>
+    const $ = (id) => document.getElementById(id);
+    const estimate = (text) => {
+      const chars = [...text].length;
+      const words = text.trim() ? text.trim().split(/\s+/u).length : 0;
+      const ratio = Number($("model").value);
+      return { chars, words, tokens: Math.ceil(chars / ratio) };
+    };
+    const fmt = (n) => n.toLocaleString('vi-VN');
+    const stat = (label, value) => `<div class="card"><span class="muted">${label}</span><span class="number">${fmt(value)}</span></div>`;
+
+    function updateTextStats() {
+      const s = estimate($("text").value);
+      $("textStats").innerHTML = stat('Ký tự', s.chars) + stat('Từ', s.words) + stat('Token ước tính', s.tokens);
+    }
+    $("text").addEventListener('input', updateTextStats);
+    $("model").addEventListener('change', updateTextStats);
+    updateTextStats();
+
+    let files = [];
+    async function scanRepo() {
+      const repo = $("repo").value.trim().replace(/^https?:\/\/github\.com\//, '').replace(/\/tree\/[^/]+\//, '/').replace(/\/$/, '');
+      const path = $("path").value.trim().replace(/^\/+|\/+$/g, '');
+      if (!repo.includes('/')) { $("status").textContent = 'Repo phải có dạng owner/name.'; $("status").className = 'error'; return; }
+      $("status").textContent = 'Đang tải danh sách file...'; $("status").className = 'muted';
+      try {
+        const tree = await fetch(`https://api.github.com/repos/${repo}/git/trees/HEAD?recursive=1`).then(check).then(r => r.json());
+        const allowed = /\.(md|mdx|html?|js|json|txt|csv)$/i;
+        const candidates = tree.tree.filter(x => x.type === 'blob' && allowed.test(x.path) && (!path || x.path.startsWith(path + '/')));
+        files = [];
+        for (const item of candidates) {
+          const response = await fetch(`https://raw.githubusercontent.com/${repo}/HEAD/${item.path}`);
+          if (!response.ok) continue;
+          const text = await response.text();
+          files.push({ path: item.path, ...estimate(text) });
+        }
+        renderFiles();
+        $("status").textContent = `Đã quét ${files.length} file. Những file nhị phân/PDF không được đếm.`;
+      } catch (e) {
+        $("status").textContent = `Không thể quét: ${e.message}. GitHub API có thể đã giới hạn lượt truy cập.`;
+        $("status").className = 'error';
+      }
+    }
+    function check(r) { if (!r.ok) throw new Error(`${r.status} ${r.statusText}`); return r; }
+    function renderFiles() {
+      const total = files.reduce((a, f) => ({ chars: a.chars + f.chars, words: a.words + f.words, tokens: a.tokens + f.tokens }), { chars: 0, words: 0, tokens: 0 });
+      $("repoStats").innerHTML = stat('File văn bản', files.length) + stat('Tổng ký tự', total.chars) + stat('Tổng từ', total.words) + stat('Tổng token ước tính', total.tokens);
+      $("results").hidden = false;
+      $("results").querySelector('tbody').innerHTML = files.map(f => `<tr><td><code>${escapeHtml(f.path)}</code></td><td>${fmt(f.chars)}</td><td>${fmt(f.words)}</td><td>${fmt(f.tokens)}</td></tr>`).join('');
+    }
+    function escapeHtml(s) { return s.replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c])); }
+    $("scan").addEventListener('click', scanRepo);
+    document.querySelectorAll('th[data-sort]').forEach(th => th.addEventListener('click', () => {
+      const key = th.dataset.sort;
+      files.sort((a, b) => typeof a[key] === 'string' ? a[key].localeCompare(b[key]) : b[key] - a[key]);
+      renderFiles();
+    }));
+  </script>
+</body>
+</html>
